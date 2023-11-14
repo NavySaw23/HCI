@@ -4,6 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>India HCI</title>
+    {% load static %}
+
+    {% block css %}
+    <link rel="stylesheet" href="{%static 'css/base.css' %}">
+    {% endblock css %}
+    
 </head>
 <body>
     {% include 'navbar.html' %}
