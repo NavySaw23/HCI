@@ -1,5 +1,10 @@
+:root {
+    --dark: #262626;
+    --light: #efefef;
+  }
+  
 body{
-    background-color: #262626;
+    background-color: var(--dark);
 }
 .main{
     display: flex;
@@ -22,9 +27,30 @@ body{
     /* background-color: red; */
 }
 
+.title{
+    display: flex;
+    flex-direction: column;
+}
+
 .logo img{
     width: 25vw;
     height: 20vw;
+}
+
+.button{
+    text-align: center;
+    background-color: var(--dark);
+    color: var(--light);
+    width: fit-content;
+    margin: 2vw auto;
+    font-size: 1.5rem;
+    padding: 2% 20%;
+    border-radius: 10px;
+    transition: 0.7s ease;
+}
+
+.button:hover{
+    background: linear-gradient(to bottom right, #F8A21C, #FE2F61);
 }
 
 @media (max-width: 768px) {
@@ -46,7 +72,7 @@ body{
     }
     .title h1{
         /* margin: auto auto; */
-        font-size: 8vw;
+        font-size: 7vw;
     }
     .title h2{
         /* margin: auto auto; */

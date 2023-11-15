@@ -49,7 +49,9 @@ a {
 }
 
 .nav-link:hover {
-  color: dodgerblue;
+  background: linear-gradient(to bottom right, #F8A21C, #FE2F61);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hamburger {
