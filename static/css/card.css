@@ -1,0 +1,70 @@
+.card {
+  display: flex;
+  flex-direction: column;
+  margin: 0.2rem;
+  border: 1px solid #262626;
+  width: 25rem;
+  height: 20rem;
+  border-radius: 10px;
+  padding: 10px 0px 0px 0px;
+  overflow: hidden;
+  min-width: 250px;
+  min-height: 200px;
+}
+
+.card-base {
+  display: flex;
+  overflow: hidden;
+}
+
+.card-base img {
+  object-fit: cover;
+  object-position: top;
+  width: 100%;
+  height: auto;
+  overflow: hidden;
+}
+
+.card-label {
+  display: flex;
+  flex-direction: column;
+  vertical-align: middle;
+  background-color: #262626;
+  padding-top: 30px;
+  padding: 3px 10px;
+  height: 5vw;
+  color: white;
+  font-family: "Calibri", sans-serif;
+  font-size: 1.2rem;
+  font-style: light;
+}
+
+.card-label h5 {
+  margin-top: 2%;
+  color: white;
+}
+
+.card-label a {
+  color: white;
+  font-size: 1rem;
+  margin-bottom: 2%;
+}
+
+@media (max-width: 768px) {
+  .card-label {
+    padding-top: 5px;
+    padding: 0px 10px;
+    min-height: 5vh;
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    margin-top: 0;
+    font-size: 0.9rem;
+  }
+
+  .card-label a {
+    font-size: 0.7rem;
+    margin-bottom: 2%;
+  }
+}

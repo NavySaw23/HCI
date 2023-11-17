@@ -1,0 +1,12 @@
+{%load static%}
+<link rel="stylesheet" href="{% static 'css/card.css' %}" />
+
+<div class="card">
+    <a class="card-base" href="{{project.id}}">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+    </a>
+    <div class="card-label">
+        <h5 class="card-title">{{ project.title }}</h5>
+        <a href="{{ project.creator_linkedin }}" target="_blank" class="card-link">{{ project.creator }}</a>
+    </div>
+</div>
