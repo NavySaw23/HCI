@@ -3,6 +3,14 @@ from .models import Project
 from login.models import User
 
 # Create your views here.
+
+def all_view(request, gal_id):
+    obj = Project.objects.all()
+    context = {
+        'obj':obj
+    }
+    return render(request, 'id.html', context)
+
 def id_view(request, gal_id):
     obj = Project.objects.get(id=gal_id)
     context = {

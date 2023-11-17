@@ -6,11 +6,10 @@
 
 .main {
   display: flex;
-  /* height: 100vh;
-  width: 100vw; */
-  /* align-items: center;
-    justify-content: center; */
+  /* padding: 10vw; */
   background-color: white;
+  height: max-content;
+
 }
 
 .landing {
@@ -19,7 +18,7 @@
   margin: 1vw 10vw;
   height: 60vh;
   width: 80vw;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   gap: 5vw;
   /* background-color: red; */
@@ -33,6 +32,7 @@
   flex-direction: row-reverse;
   gap: 3px;
 }
+
 
 .like-icon {
   cursor: pointer;
@@ -53,6 +53,7 @@ i {
   /* background-color: aqua; */
   width: 80vw;
   padding: 5px;
+  margin-top: 20vh;
   gap: 1.5px;
   display: flex;
   flex-direction: column;
@@ -81,6 +82,43 @@ i {
   background: linear-gradient(to bottom right, #f8a21c, #fe2f61);
 }
 
+.userdetail {
+  display: flex;
+  height: max-content;
+  /* background-color: #FE2F61; */
+  flex-direction: row;
+  text-align: center;
+}
+
+.title {
+  font-size: 2vw;
+  /* align-self: center; */
+  font-weight: bold;
+  margin: 5px 1.5vw;
+}
+
+.userdetail{
+  margin: 1vw 0;
+}
+
+.userdetail img {
+  padding: 0.2vw;
+  border-radius: 50%;
+  width: 1.6vw;
+  height: 1.6vw;
+  margin: 0 1vw;
+  background-color: lightgray;
+}
+
+.userdetail p {
+  margin: 0 0;
+  font-size: 1.2vw;
+}
+
+.description {
+  margin: 0 1vw
+}
+
 @media (max-width: 768px) {
   .landing {
     display: flex;
@@ -88,30 +126,26 @@ i {
     height: 60vh;
     width: 80vw;
     align-items: center;
+    gap: 0;
     justify-content: center;
   }
+
   .logo img {
     width: 70vw;
     height: 55vw;
   }
+  
   .info {
     display: flex;
     flex-direction: column;
+    margin: 0px;
   }
 
   .title {
-    font-size: 3.1vw;
+    font-size: 3.2vw;
     align-self: center;
     font-weight: bold;
     margin: 5px 0;
-  }
-
-  .userdetail {
-    display: flex;
-    height: max-content;
-    /* background-color: #FE2F61; */
-    flex-direction: row;
-    text-align: center;
   }
 
   .userdetail img {
@@ -127,4 +161,10 @@ i {
     margin: auto 0;
     font-size: 3.1vw;
   }
+
+  .description{
+    display: none;
+    font-weight: light;
+  }
+
 }

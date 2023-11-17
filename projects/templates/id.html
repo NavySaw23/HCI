@@ -3,6 +3,7 @@
 {% endblock css %} {% block body %}
 <div class="main">
   <div class="landing">
+
     <div class="poster">
       <img src="{{obj.image.url}}" alt="alt" />
       <div class="social">
@@ -15,6 +16,7 @@
         <a class="social-wrapper" href="{{obj.creator_linkedin}}">
             <i class="fa-brands fa-linkedin-in like-icon"></i>
         </a>
+
       </div>
     </div>
 
@@ -25,10 +27,13 @@
       <div class="userdetail">
         <img src="{% static 'img/user.svg' %}" alt="" />
         <p>{{obj.creator}}</p>
-      </div>
     </div>
+    <p class="description">{{obj.description}}</p>
+    </div>
+
   </div>
 </div>
 
 <script src="{% static 'js/like.js' %}"></script>
 {% endblock body %}
+

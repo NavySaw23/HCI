@@ -22,14 +22,15 @@ from django.conf.urls.static import static
 from django.urls import path
 from home.views import home_view
 from login.views import login_view, postsign_view
-from projects.views import id_view, id_view_logged
+from projects.views import all_view, id_view, id_view_logged
 
 urlpatterns = [
     path('', home_view, name='home'),
     path('login/', login_view, name='login'),
     path('postsign/', postsign_view, name='postsign'),
-    path('test/<int:gal_id>/', id_view, name='idv'),
-    path('test/<int:gal_id>/u/<int:user_id>', id_view_logged, name='idvl'),
+    path('gallery/', all_view, name='gal'),
+    path('gallery/<int:gal_id>/', id_view, name='idv'),
+    path('gallery/<int:gal_id>/u/<int:user_id>', id_view_logged, name='idvl'),
     # path('test/<int:gal_id>/u/<int:user_id>/like', like, name='idvl'),
     path('admin/', admin.site.urls),
 ]
