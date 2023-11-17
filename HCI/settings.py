@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'projects',
     'login',
     'home',
+    'widget_tweaks',
 ]
 
 MIDDLEWARE = [

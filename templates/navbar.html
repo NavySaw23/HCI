@@ -9,7 +9,7 @@
 
       <a href="https://www.indiahci.org/2023/" class="nav-brand">Student Design Consortium</a>
     
-      <ul class="nav-menu">
+      <!-- <ul class="nav-menu">
         <li class="nav-item">
           <a href="/#" class="nav-link">Home</a>
         </li>
@@ -19,7 +19,14 @@
         <li class="nav-item">
           <a href="#" class="nav-link">Login</a>
         </li>
-      </ul>
+      </ul> -->
+
+      {% if request.user.is_authenticated %}
+          <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+        {% else %}
+          <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+          <a class="nav-item nav-link" href="{% url 'registration' %}">Register</a>
+        {% endif %}
       <div class="hamburger">
         <span class="bar"></span>
         <span class="bar"></span>

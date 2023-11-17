@@ -1,25 +1,32 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-
-
-{% load static %}
-{% block css %}
-<link rel="stylesheet" href="{% static 'css/home.css' %}">
-{% endblock css %}
+{% block title %}Login{% endblock %}
 
 {% block body %}
-<div class="main">
-    <div class="landing">
-        {%if messg%}
-        {%endif%}
-        <form action="/postsign/" method="post">
-            <h1>Invalid credentials, please try again</h1>
-            {% csrf_token %} Email :
-            <input type="email" name="email">
-            Password:
-            <input type="password" name="pass">
-            <input type="submit" value="SignIn">
-        </form>
+
+    <div class="jumbotron">
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-danger" role="alert">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+
+      <h2>User Login</h2>
+      <form action="." method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_username">Username:</label>
+          <input type="text" name="username" class="form-control" id="id_username" required>
+        </div>
+        <div class="form-group">
+          <label for="id_password">Password:</label>
+          <input type="password" name="password" class="form-control" id="id_password" required>
+        </div>
+
+        <input type="submit" class="btn btn-primary btn-sm" value="Login">
+      </form>
     </div>
-</div>
-{% endblock body %}
+
+{% endblock %}
