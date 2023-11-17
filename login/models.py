@@ -1,6 +1,30 @@
 from django.db import models
-from django.contrib.postgres.fields import ArrayField
 
 class User(models.Model):
     username = models.CharField(max_length=100)
-    Hasliked = ArrayField(models.BooleanField())    
+    Hasliked1 = models.BooleanField(default=False)    
+    Hasliked2 = models.BooleanField(default=False)    
+    Hasliked3 = models.BooleanField(default=False)    
+    Hasliked4 = models.BooleanField(default=False)    
+    Hasliked5 = models.BooleanField(default=False)    
+    Hasliked6 = models.BooleanField(default=False)    
+    Hasliked7 = models.BooleanField(default=False)    
+    Hasliked8 = models.BooleanField(default=False)    
+    Hasliked9 = models.BooleanField(default=False)    
+    Hasliked10 = models.BooleanField(default=False)    
+    Hasliked11 = models.BooleanField(default=False)    
+    Hasliked12 = models.BooleanField(default=False)    
+    Hasliked13 = models.BooleanField(default=False)    
+    Hasliked14 = models.BooleanField(default=False)    
+    Hasliked15 = models.BooleanField(default=False)    
+    Hasliked16 = models.BooleanField(default=False)    
+    Hasliked17 = models.BooleanField(default=False)    
+    Hasliked18 = models.BooleanField(default=False)    
+    Hasliked19 = models.BooleanField(default=False)    
+    Hasliked20 = models.BooleanField(default=False)
+    Hasliked21 = models.BooleanField(default=False)    
+    Hasliked22 = models.BooleanField(default=False)    
+    Hasliked23 = models.BooleanField(default=False)    
+    Hasliked24 = models.BooleanField(default=False)    
+    Hasliked25 = models.BooleanField(default=False)       
+    

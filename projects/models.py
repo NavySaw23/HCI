@@ -6,4 +6,4 @@ class Project(models.Model):
     creator = models.CharField(max_length=100)
     creator_linkedin = models.URLField()
     like_count = models.IntegerField(default=0)
-    image = models.ImageField()
+    image = models.ImageField(upload_to='img/projects')

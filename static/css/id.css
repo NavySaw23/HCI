@@ -3,13 +3,11 @@
   --light: #efefef;
 }
 
-body {
-  background-color: var(--dark);
-}
+
 .main {
   display: flex;
-  height: 100vh;
-  width: 100vw;
+  /* height: 100vh;
+  width: 100vw; */
   /* align-items: center;
     justify-content: center; */
   background-color: white;
@@ -27,13 +25,28 @@ body {
   /* background-color: red; */
 }
 
+.social {
+  display: flex;
+  position: relative;
+  right: 0vw;
+  bottom: 0vw;
+  flex-direction: row-reverse;
+  gap: 3px;
+}
+
 .like-icon {
   cursor: pointer;
-  color: #292929; /* Default color */
+  color: #292929;
+  padding: 5px;
+}
+
+i {
+  border: 1px solid #292929; /* Change the border color as needed */
+  border-radius: 50%; /* Change the border radius as needed */
 }
 
 .liked {
-  color: #fe2f61; /* Change the color for the "liked" state */
+  color: #fe2f61;
 }
 
 .info {
@@ -47,7 +60,7 @@ body {
 
 .poster img {
   width: 100%;
-  margin-top: 20vw;
+  margin-top: 20vh;
   height: auto;
   border: 1px solid #262626;
 }
