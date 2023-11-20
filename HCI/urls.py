@@ -21,8 +21,8 @@ from django.conf.urls.static import static
 
 from django.urls import path
 from home.views import home_view
-from login.views import login_view, postsign_view
-from projects.views import all_view, id_view, loginView, registrationView, logoutView
+# from login.views import login_view, postsign_view
+from projects.views import all_view, id_view, loginView, registrationView, logoutView, toggle_like
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -36,6 +36,8 @@ urlpatterns = [
 
     path('gallery/', all_view, name='gal'),
     path('gallery/<int:gal_id>/', id_view, name='idv'),
+
+    path('like/<int:gal_id>', toggle_like, name="like"),
     # path('gallery/<int:gal_id>/u/<int:user_id>', id_view_logged, name='idvl'),
     path('admin/', admin.site.urls),
 ]

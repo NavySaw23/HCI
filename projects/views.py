@@ -2,7 +2,7 @@ from django.shortcuts import render
 from .models import Project
 from login.models import User
 from django.shortcuts import render, get_object_or_404,redirect
-from django.http import HttpResponseRedirect
+from django.http import HttpResponseRedirect, JsonResponse
 from .forms import RegistrationForm
 from django.contrib.auth.models import User
 from django.contrib import messages
@@ -67,6 +67,28 @@ def logoutView(request):
     logout(request)
     return redirect('gal')
 
+@login_required
+def toggle_like(request, gal_id):
+    object = Project.objects.get(pk=gal_id)
+    user = request.user
+
+    if user in object.likes.all():
+        # User already likes the object, so unlike it
+        object.likes.remove(user)
+        object.like_count -= 1
+    else:
+        # User doesn't like the object, so like it
+        object.likes.add(user)
+        object.like_count += 1
+
+    # Update the object's like count
+    object.save()
+
+    # Return a response based on the updated like status
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+
+
 # # @login_required
 # def id_view_logged(request, gal_id, user_id):
 #     obj = Project.objects.get(id=gal_id)
@@ -77,18 +99,18 @@ def logoutView(request):
 #     }
 #     return render(request, 'id.html', context)
 
-@login_required
-def like(request, gal_id):
-    obj = Project.objects.get(id=gal_id)
-    user = request.user
-    obj.like_count += 1
+# @login_required
+# def like(request, gal_id):
+#     obj = Project.objects.get(id=gal_id)
+#     user = request.user
+#     obj.like_count += 1
 
-    if gal_id == 1:
-        user.Hasliked1 = True
+#     if gal_id == 1:
+#         user.Hasliked1 = True
 
-    obj.save()
+#     obj.save()
 
-    context = {
-        'obj' : obj,
-    }
-    return render(request, 'id.html', context)
+#     context = {
+#         'obj' : obj,
+#     }
+#     return render(request, 'id.html', context)
