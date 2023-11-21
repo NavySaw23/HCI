@@ -22,7 +22,7 @@ from django.conf.urls.static import static
 from django.urls import path
 from home.views import home_view
 # from login.views import login_view, postsign_view
-from projects.views import all_view, id_view, loginView, registrationView, logoutView, toggle_like
+from projects.views import sdc_all_view, pd_all_view, at_all_view, sdc_id_view, pd_id_view, at_id_view, sdc_toggle_like, pd_toggle_like, at_toggle_like, loginView, registrationView, logoutView
 
 urlpatterns = [
     path('', home_view, name='home'),
@@ -34,10 +34,19 @@ urlpatterns = [
     path('login/', loginView, name='login'),
     path('logout/', logoutView, name='logout'),
 
-    path('gallery/', all_view, name='gal'),
-    path('gallery/<int:gal_id>/', id_view, name='idv'),
+    path('gallery/sdc', sdc_all_view, name='gal'),
+    path('gallery/pd', pd_all_view, name='gal'),
+    path('gallery/at', at_all_view, name='gal'),
 
-    path('like/<int:gal_id>', toggle_like, name="like"),
+    path('gallery/sdc/<int:gal_id>/', sdc_id_view, name='idv'),
+    path('like/sdc/<int:gal_id>', sdc_toggle_like, name="like"),
+    
+    path('gallery/pd/<int:gal_id>/', pd_id_view, name='idv'),
+    path('like/pd/<int:gal_id>', pd_toggle_like, name="like"),
+    
+    path('gallery/at/<int:gal_id>/', at_id_view, name='idv'),
+    path('like/at/<int:gal_id>', at_toggle_like, name="like"),
+    
     # path('gallery/<int:gal_id>/u/<int:user_id>', id_view_logged, name='idvl'),
     path('admin/', admin.site.urls),
 ]

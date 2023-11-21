@@ -1,27 +1,60 @@
 from django.shortcuts import render
-from .models import Project
+from .models import SDC_Project, PD_Project, AT_Project
+
 from login.models import User
 from django.shortcuts import render, get_object_or_404,redirect
 from django.http import HttpResponseRedirect, JsonResponse
 from .forms import RegistrationForm
+
 from django.contrib.auth.models import User
 from django.contrib import messages
+
 from django.contrib.auth import login,logout,authenticate, update_session_auth_hash
 from django.contrib.auth.forms import PasswordChangeForm
 from django.contrib.auth.decorators import login_required
 # Create your views here.
 
 
-def all_view(request):
-    obj = Project.objects.all()
+def sdc_all_view(request):
+    obj = SDC_Project.objects.all()
+    context = {
+        'obj': obj
+    }
+    return render(request, 'all.html', context)
+
+def pd_all_view(request):
+    obj = PD_Project.objects.all()
+    print(obj)
+    context = {
+        'obj': obj
+    }
+    return render(request, 'all.html', context)
+
+def at_all_view(request):
+    obj = AT_Project.objects.all()
     context = {
         'obj': obj
     }
     return render(request, 'all.html', context)
 
 
-def id_view(request, gal_id):
-    obj = Project.objects.get(id=gal_id)
+
+def sdc_id_view(request, gal_id):
+    obj = SDC_Project.objects.get(id=gal_id)
+    context = {
+        'obj': obj
+    }
+    return render(request, 'id.html', context)
+
+def pd_id_view(request, gal_id):
+    obj = PD_Project.objects.get(id=gal_id)
+    context = {
+        'obj': obj
+    }
+    return render(request, 'id.html', context)
+
+def at_id_view(request, gal_id):
+    obj = AT_Project.objects.get(id=gal_id)
     context = {
         'obj': obj
     }
@@ -68,17 +101,57 @@ def logoutView(request):
     return redirect('gal')
 
 @login_required
-def toggle_like(request, gal_id):
-    object = Project.objects.get(pk=gal_id)
+def sdc_toggle_like(request, gal_id):
+    object = SDC_Project.objects.get(pk=gal_id)
     user = request.user
 
-    if user in object.likes.all():
-        # User already likes the object, so unlike it
-        object.likes.remove(user)
+    if user in object.like_users.all():
+        # User already like_users the object, so unlike it
+        object.like_users.remove(user)
         object.like_count -= 1
     else:
         # User doesn't like the object, so like it
-        object.likes.add(user)
+        object.like_users.add(user)
+        object.like_count += 1
+
+    # Update the object's like count
+    object.save()
+
+    # Return a response based on the updated like status
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+@login_required
+def pd_toggle_like(request, gal_id):
+    object = PD_Project.objects.get(pk=gal_id)
+    user = request.user
+
+    if user in object.like_users.all():
+        # User already like_users the object, so unlike it
+        object.like_users.remove(user)
+        object.like_count -= 1
+    else:
+        # User doesn't like the object, so like it
+        object.like_users.add(user)
+        object.like_count += 1
+
+    # Update the object's like count
+    object.save()
+
+    # Return a response based on the updated like status
+    return HttpResponseRedirect(request.META.get('HTTP_REFERER'))
+
+@login_required
+def at_toggle_like(request, gal_id):
+    object = AT_Project.objects.get(pk=gal_id)
+    user = request.user
+
+    if user in object.like_users.all():
+        # User already like_users the object, so unlike it
+        object.like_users.remove(user)
+        object.like_count -= 1
+    else:
+        # User doesn't like the object, so like it
+        object.like_users.add(user)
         object.like_count += 1
 
     # Update the object's like count

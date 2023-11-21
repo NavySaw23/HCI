@@ -7,14 +7,22 @@
     <img class="nav-logo" src="{%static 'img/Logo_Dark.png' %}" />
     <!-- <img class="nav-back" src="{%static 'img/left.svg' %}"> -->
 
-    <a href="https://www.indiahci.org/2023/" class="nav-brand"
-      >Student Design Consortium</a
+    <a href="/" class="nav-brand"
+      >India HCI</a
     >
 
     <ul class="nav-menu">
+      
       <li class="nav-item">
-        <a href="/gallery" class="nav-link">E-Gallery</a>
+        <a href="/gallery/sdc" class="nav-link">Student Design Consortium</a>
       </li>
+      <li class="nav-item">
+        <a href="/gallery/pd" class="nav-link">Posters & Demos</a>
+      </li>
+      <li class="nav-item">
+        <a href="/gallery/at" class="nav-link">Art Track</a>
+      </li>
+
       {% if request.user.is_authenticated %}
       <li class="nav-item">
         <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
