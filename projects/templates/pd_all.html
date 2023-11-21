@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/all.css' %}" />
+{% endblock css %}
+
+{% block body %}
+<div class="main">
+  <div class="gallery">
+      {% for project in obj %}
+          {% include 'at_card.html' with project=project %}
+      {% endfor %}
+  </div>
+</div>
+{% endblock body %}

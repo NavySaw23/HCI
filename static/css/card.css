@@ -51,20 +51,44 @@
 }
 
 @media (max-width: 768px) {
+  .card {
+    display: flex;
+    flex-direction: column;
+    margin: 0.6rem 0.3rem;
+    border: 1px solid #262626;
+    width: 25rem;
+    height: 7rem;
+    border-radius: 10px;
+    padding: 0px 0px 0px 0px;
+    overflow: visible;
+    min-width: 250px;
+    min-height: 10px;
+  }
+
   .card-label {
-    padding-top: 5px;
+    display: flex;
+    padding-top: 0px;
     padding: 0px 10px;
-    min-height: 5vh;
+    height: 100%;
     font-size: 1.2rem;
   }
-  
-  h5 {
-    margin-top: 0;
-    font-size: 0.9rem;
+
+  .card-label h5 {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    background-image: linear-gradient(to bottom, #f8a21c, #fe2f61);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
   }
-  
+
   .card-label a {
-    font-size: 0.7rem;
-    margin-bottom: 2%;
+    bottom: 2%;
+    font-size: 1rem;
+    vertical-align: bottom;
+  }
+
+  .card-base {
+    display: none;
   }
 }
