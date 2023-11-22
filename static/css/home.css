@@ -8,7 +8,7 @@ body{
 }
 .main{
     display: flex;
-    height: 100vh;
+    height: 100%;
     width: 100vw;
     /* align-items: center;
     justify-content: center; */
@@ -19,7 +19,7 @@ body{
     display: flex;
     flex-direction: row;
     margin: 1vw 10vw;
-    height: 60vh;
+    height: max-content;
     width: 80vw;
     align-items: center;
     justify-content: center;
@@ -27,55 +27,86 @@ body{
     /* background-color: red; */
 }
 
-.title{
+
+.rules{
+    border: 1px solid #000000;
+    background-color: #1f1f1f;
+    color: white;
+    width: 100%;
+    height: fit-content;
+    border-radius: 10px;
+    padding: 1rem;
     display: flex;
     flex-direction: column;
+    text-align: left;
+    font-weight: 350;
 }
 
-.logo img{
-    width: 25vw;
-    height: 20vw;
+.rules h2{
+    margin: 10px;
 }
 
-.button{
-    text-align: center;
-    background-color: var(--dark);
-    color: var(--light);
-    width: fit-content;
-    margin: 2vw auto;
-    font-size: 1.5rem;
-    padding: 2% 20%;
+.grad-bar{
+    width: 200px;
+    height: 3px;
+    background-image: linear-gradient(to right, #F8A21C, #FE2F61);
+    background-size: cover;
+    border: none;
+    color: white;
+}
+
+.rules ul{
+    text-align: left;
+}
+
+.rules ul li{
+    margin: 10px 0;
+}
+
+.menu{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.menu-option{
+    border: 1px solid #000000;
+    background-color: #ffffff;
+    color: black;
+    width: 100%;
+    height: fit-content;
     border-radius: 10px;
-    transition: 0.7s ease;
+    padding: 1rem;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    font-weight: 350;
+    margin: 10px 0;
 }
 
-.button:hover{
-    background: linear-gradient(to bottom right, #F8A21C, #FE2F61);
+.menu-title{
+    font-weight: 500;
+    margin-bottom: 10px;
 }
+
+.menu-title{
+    font-size: 1.2rem;
+    background-image: linear-gradient(to bottom, #f8a21c, #fe2f61);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+
+
 
 @media (max-width: 768px) {
     .landing{
         display: flex;
         flex-direction: column;
-        height: 60vh;
-        width: 80vw;
+        height: max-content;
+        width: 100%;
         align-items: center;
         justify-content: center;
     }
-    .logo img{
-        width: 70vw;
-        height: 55vw;
-    }
-    .title{
-        display: flex;
-        flex-direction: column;
-    }
-    .title h1{
-        /* margin: auto auto; */
-        font-size: 7vw;
-    }
-    .title h2{
-        /* margin: auto auto; */
-        font-size: 7vw;
-    }
+
 }

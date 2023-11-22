@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: row;
   margin: 1vw 10vw;
-  height: 60vh;
+  height: fit-content;
   width: 80vw;
   align-items: flex-start;
   justify-content: center;
@@ -28,24 +28,29 @@
   position: relative;
   right: 0vw;
   bottom: 0vw;
-  flex-direction: row-reverse;
+  flex-direction: row;
+  justify-content: center;
   gap: 3px;
 }
 
 
 .like-icon {
   cursor: pointer;
-  color: #292929;
+  color: white;
   padding: 5px;
+  background-color: black;
+  border-radius: 50%;
+
 }
 
-i {
-  border: 1px solid #292929; /* Change the border color as needed */
-  border-radius: 50%; /* Change the border radius as needed */
+.social-wrapper {
+  border-radius: 50%;
 }
 
 .liked {
-  color: #fe2f61;
+  background-image: linear-gradient(to right, #F8A21C, #FE2F61);
+  background-size: cover;
+  border-radius: 50%;
 }
 
 .info {
@@ -60,7 +65,7 @@ i {
 
 .poster img {
   width: 100%;
-  margin-top: 20vh;
+  margin-top: 100vw;
   height: auto;
   border: 1px solid #262626;
 }
@@ -141,10 +146,10 @@ i {
   }
 
   .title {
-    font-size: 3.2vw;
-    align-self: center;
+    font-size: 5.2vw;
+    /* align-self: center; */
     font-weight: bold;
-    margin: 5px 0;
+    margin: 1.5vw 0;
   }
 
   .userdetail img {
@@ -162,8 +167,11 @@ i {
   }
 
   .description{
-    display: none;
-    font-weight: light;
+    /* display: none; */
+    margin-top: 10px;
+    font-weight: 300;
+    font-size: 3.2vw;
+    text-align: justify;
   }
 
 }

@@ -1,20 +1,53 @@
-{% extends 'base.html' %}
-
-{% load static %}
-{% block css %}
-<link rel="stylesheet" href="{%static 'css/home.css' %}">
-{% endblock css %}
-
-{% block body %}
-    <div class="main">
-        <div class="landing">
-            <div class="logo">
-                <img src="{%static 'img/Logo_Dark.png' %}" alt="">
-            </div>
-            <div class="title">
-                <h1> Welcome to India HCI </h1>
-                <a href="/gallery" class="button"> E-Gallery</a>
-            </div>
-        </div>
+{% extends 'base.html' %} {% load static %} {% block css %}
+<link rel="stylesheet" href="{%static 'css/home.css' %}" />
+{% endblock css %} {% block body %}
+<div class="main">
+  <div class="landing">
+    <div class="rules">
+      <h2>Voting Guidelines</h2>
+      <span class="grad-bar"></span>
+      <ul type="circle">
+        <li>
+          • Each participant is allowed to cast a single vote for one poster in
+          each track, with Maximum limit of one vote per poster per track.
+        </li>
+        <li>
+          • To record your response and participate in the voting process, you
+          must log in to your account.
+        </li>
+        <li>• All votes will be counted until November 24th,</li>
+        <li>
+          • 11:59 PM (UTC) Results of the voting will be announced on
+          <b>November 25th, at 11:45 AM</b> during the awards and
+          acknowledgments ceremony
+        </li>
+      </ul>
     </div>
+    <div class="menu">
+      <a class="menu-option" href="/gallery/pd">
+        <div class="menu-title">Posters & Demos</div>
+        <div class="menu-desc">
+          Showcasing novel implementations, interaction designs, concepts,
+          techniques, devices, to a wider audience and provide opportunities to
+          interact with each other.
+        </div>
+      </a>
+      <a class="menu-option" href="/gallery/pd">
+        <div class="menu-title">Student Design Consortium</div>
+        <div class="menu-desc">
+          Inviting students from all backgrounds to explore the fascinating
+          intersection of Human-Computer Interaction and Creativity.
+        </div>
+      </a>
+      <a class="menu-option" href="/gallery/pd">
+        <div class="menu-title">Art and Design</div>
+        <div class="menu-desc">
+          Building and uniting a community of artists and researchers exploring
+          the intersectional space of art, design, technology, and HCI.
+        </div>
+        <div>Art Track</div>
+      </a>
+    </div>
+  </div>
+</div>
 {% endblock body %}

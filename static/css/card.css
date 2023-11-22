@@ -44,7 +44,7 @@
   color: white;
 }
 
-.card-label a {
+.card-link {
   color: white;
   font-size: 1rem;
   margin-bottom: 2%;
@@ -57,12 +57,13 @@
     margin: 0.6rem 0.3rem;
     border: 1px solid #262626;
     width: 25rem;
-    height: 7rem;
+    height: fit-content;
     border-radius: 10px;
     padding: 0px 0px 0px 0px;
     overflow: visible;
     min-width: 250px;
     min-height: 10px;
+
   }
 
   .card-label {
@@ -71,6 +72,7 @@
     padding: 0px 10px;
     height: 100%;
     font-size: 1.2rem;
+    border-radius: 10px;
   }
 
   .card-label h5 {
@@ -82,10 +84,10 @@
     background-clip: text;
   }
 
-  .card-label a {
-    bottom: 2%;
+  .card-link {
     font-size: 1rem;
-    vertical-align: bottom;
+    margin: 1rem 0;
+    white-space: pre;
   }
 
   .card-base {

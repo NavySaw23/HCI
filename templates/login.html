@@ -2,6 +2,11 @@
 
 {% block title %}Login{% endblock %}
 
+{%load static%}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/form.css' %}">
+{% endblock css %}
+
 {% block body %}
 
     <div class="jumbotron">
@@ -14,6 +19,7 @@
       {% endif %}
 
       <h2>User Login</h2>
+
       <form action="." method="POST">
         {% csrf_token %}
         <div class="form-group">
@@ -24,8 +30,9 @@
           <label for="id_password">Password:</label>
           <input type="password" name="password" class="form-control" id="id_password" required>
         </div>
-
-        <input type="submit" class="btn btn-primary btn-sm" value="Login">
+        <!-- <div class="submit-btn">   -->
+          <input type="submit" class="btn btn-primary btn-sm" value="Login">
+        <!-- </div> -->
       </form>
     </div>
 

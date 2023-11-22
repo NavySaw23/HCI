@@ -13,7 +13,7 @@ from django.conf import settings
 
 class SDC_Project(models.Model):
     title = models.CharField(max_length=100)
-    creator = models.CharField(max_length=100)
+    creator = models.TextField(max_length=100)
     like_count = models.IntegerField(default=0)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL)
     image = models.ImageField(upload_to='img/projects')
@@ -21,7 +21,7 @@ class SDC_Project(models.Model):
 
 class PD_Project(models.Model):
     title = models.CharField(max_length=100)
-    creator = models.CharField(max_length=100)
+    creator = models.TextField(max_length=100)
     like_count = models.IntegerField(default=0)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL)
     image = models.ImageField(upload_to='img/projects')
@@ -29,7 +29,7 @@ class PD_Project(models.Model):
 
 class AT_Project(models.Model):
     title = models.CharField(max_length=100)
-    creator = models.CharField(max_length=100)
+    creator = models.TextField(max_length=100)
     like_count = models.IntegerField(default=0)
     like_users = models.ManyToManyField(settings.AUTH_USER_MODEL)
     image = models.ImageField(upload_to='img/projects')

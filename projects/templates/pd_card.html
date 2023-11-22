@@ -3,10 +3,12 @@
 
 <div class="card">
     <a class="card-base" href="pd/{{project.id}}">
-        <img src="{{ project.image.url }}" alt="{{ project.title }}">
+        <img src="{{ project.image.url }}" alt="{{ project.title }}" />
     </a>
+    <a href="pd/{{project.id}}">
     <div class="card-label">
-        <h5 class="card-title">{{ project.title }}</h5>
-        <a class="card-link">{{ project.creator }}</a>
-    </div>
+          <h5 class="card-title">{{ project.title }}</h5>
+          <a class="card-link" href="pd/{{project.id}}">{{ project.creator }}</a>
+        </div>
+    </a>
 </div>
